@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Адреса електронної пошти підтверджена</title>
+{% endblock head %}
+
+{% block content %}
+<div class="container justify-content-center  mt-4 pt-4">
+    {% if user.is_active %} {% if reuqest.user.is_authenticated %}
+    <a class="text-center" href="{% url 'account:profile' %}">Перейти в профіль</a>
+    {% else %}
+    <p class="text-center">
+        Адреса електронної пошти підтверджена<br>
+        Ви можете <a href="{% url 'account:login' %}">ввійти</a>
+    </p>
+    {% endif %} {% else %}
+    <p>Щось пішло не так.</p>
+    {% endif %}
+</div>
+{% endblock %}

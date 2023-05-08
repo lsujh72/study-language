@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block head %}
+<title>Ласкаво просимо!</title>
+{% endblock head %}
+
+{% block content %}
+
+<div class="container-fluid m-5 p-5">
+    <h3 class="text-center">Ласкаво просимо, {{ new_user.email }}!</h3>
+    <p class="text-center">
+        Ми надіслали вам електронний лист для підтвердження вашого облікового запису.
+        Будь ласка, зв'яжіться з нами, якщо ви не отримаєте його протягом декількох хвилин.
+    </p>
+</div>
+{% endblock content %}
