@@ -22,7 +22,7 @@ def encoder(scheme, host, user):
     signed_user = signer.sign(user_crypt)
     kwargs = {"signed_user": signed_user}
     # create activation url
-    activation_url = reverse("users:activate_user_account", kwargs=kwargs)
+    activation_url = reverse("account:activate_user_account", kwargs=kwargs)
     activate_url = "{0}://{1}{2}".format(scheme, host, activation_url)
 
     context = {"user": user, "activate_url": activate_url}
