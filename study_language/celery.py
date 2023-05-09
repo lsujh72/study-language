@@ -6,11 +6,10 @@ from django.conf import settings
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "study_language.settings")
 
-app = Celery("study_language")
+app = Celery("study_language", broker=settings.BROKER_URL)
 
 app.config_from_object("django.conf:settings")
-app.conf.broker_url = settings.CELERY_BROKER_URL
-app.autodiscover_tasks(settings.INSTALLED_APPS)
+app.autodiscover_tasks()
 
 
 @app.task(bind=True)

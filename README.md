@@ -11,3 +11,5 @@
 - `python3 manage.py createsuperuser`
 
 - `python3 manage.py runserver`
+
+- `celery -A study_language worker -l info`
